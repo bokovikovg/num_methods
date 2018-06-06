@@ -3,8 +3,6 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
-eps = 0.0001
-
 #integrate func f(x) on an interval [a, b] with eps precision
 def integrate(f, a, b, eps):
     n = 2
@@ -60,14 +58,17 @@ def find_min(f, a, b, eps):
     return min_x
 
 #main script
-pt = find_min(F, -2.0, 0.0, eps)
+eps = 0.0001
+a = -2.0
+b = 0.0
+pt = find_min(F, a, b, eps)
 print("minimum of given function is at x = {0}".format(pt))
 
 step = 0.001
 x = []
-x.append(-2.0)
+x.append(a)
 i = 0
-while (x[i] <= 0.0):
+while (x[i] <= b):
     x.append(x[i] + step)
     i = i + 1
 y = []
