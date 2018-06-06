@@ -3,6 +3,8 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
+eps = 0.0001
+
 #integrate func f(x) on an interval [a, b] with eps precision
 def integrate(f, a, b, eps):
     n = 2
@@ -58,7 +60,6 @@ def find_min(f, a, b, eps):
     return min_x
 
 #main script
-eps = 0.0001
 a = -2.0
 b = 0.0
 pt = find_min(F, a, b, eps)
