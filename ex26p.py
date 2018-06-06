@@ -29,6 +29,7 @@ def find_max(A):
 #input_mtrx = input("enter matrix: ")
 #main script
 A = np.array([[5., 1., 2.], [1., 4., 1.], [2., 1., 3.]], np.float32)
+cA = A
 print(A)
 eps = 0.001
 k = 0
@@ -57,4 +58,7 @@ for i in range(0, n):
     eig_v[:][i] /= eig_v[i][i]
 print("eigenvectors:\n{0}".format(eig_v))
 print("eigenvalues\n{0}".format(A))
-print("calculated in {0} iterations".format(k))
+print("calculated in {0} iterations\n".format(k))
+I = np.identity(3, np.float)
+detA = np.linalg.det(cA - A[0][0]*I)
+print("det(A - lE) = {0}\n".format(detA))
